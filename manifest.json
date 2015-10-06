@@ -1,0 +1,12 @@
+﻿{
+	"name": "scroll-assist",
+	"version": "0.1",
+	"manifest_version": 2,
+
+	"description": "スクロールバー上でスクロールした時のスクロール量を増やす",
+
+	"content_scripts": [{
+		"matches": ["*://*/*"],
+		"js": ["scrollbar-wheel.js"]
+	}]
+}

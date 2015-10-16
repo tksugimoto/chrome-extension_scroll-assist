@@ -8,7 +8,7 @@ window.addEventListener("wheel", function(evt) {
         // （doctypeなどの影響？）document.documentElement.clientHeightが使えない（bodyのheightを返す）場合に誤作動することを防ぐ
         isHorizontalScroll = evt.clientY > Math.min(document.documentElement.clientHeight, window.innerHeight);
         scrollTarget = document.body;
-    } else {
+    } else if (evt.target.tagName !== "BODY") {
         var target = evt.target;
         // offsetX, offsetY: target左上を(0, 0)とした座標
         isVerticalScroll = target.scrollHeight > target.clientHeight && evt.offsetX > target.clientWidth;

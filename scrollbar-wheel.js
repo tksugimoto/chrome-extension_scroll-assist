@@ -5,7 +5,8 @@ window.addEventListener("wheel", function(evt) {
     if (evt.target.tagName === "HTML") {
         // ページ全体のスクロールバー
         isVerticalScroll = evt.clientX > document.documentElement.clientWidth;
-        isHorizontalScroll = evt.clientY > document.documentElement.clientHeight;
+        // （doctypeなどの影響？）document.documentElement.clientHeightが使えない（bodyのheightを返す）場合に誤作動することを防ぐ
+        isHorizontalScroll = evt.clientY > Math.min(document.documentElement.clientHeight, window.innerHeight);
         scrollTarget = document.body;
     } else {
         var target = evt.target;

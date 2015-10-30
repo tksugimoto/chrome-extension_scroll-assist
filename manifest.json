@@ -7,6 +7,7 @@
 
 	"content_scripts": [{
 		"matches": ["*://*/*"],
-		"js": ["scrollbar-wheel.js"]
+		"js": ["scrollbar-wheel.js"],
+		"all_frames": true
 	}]
 }
